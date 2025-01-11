@@ -1,13 +1,9 @@
-<?php
-    include("database.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SI GEBUS - Home</title>
+    <title>SI GEBUS - Contact Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,30 +30,19 @@
         nav a:hover {
             background-color: #003d80;
         }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+       
     </style>
 </head>
 <body>
-    <?php include("header.php"); ?>
-    <main>
-        <h2>Your One-Stop Pet Care Solution</h2>
-        <p>At SI GEBUS, we provide high-quality services to keep your pets happy and healthy.</p>
-        <p>Choose from our luxurious hotel stays or professional grooming services today!</p>
-    </main>
-    <footer>
-        &copy; 2025 SI GEBUS Petshop. All rights reserved.
-    </footer>
-</body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="hotel.php">Hotel Reservations</a>
+        <a href="grooming.php">Grooming Reservations</a>
+        <a href="catalog.php">Product Catalog</a>
+        <a href="contact.php">Contact Us</a>
+    </nav>
+</body>   
 </html>

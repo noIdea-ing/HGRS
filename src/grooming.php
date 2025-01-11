@@ -1,3 +1,24 @@
+<?php 
+    session_start();
+
+    // Check if the user is logged in
+    if (!isset($_SESSION['username'])) {
+            include("login.php");
+        exit();
+    }
+    else{
+        echo "Favorite color is " . $_SESSION["username"] . ".<br>";
+        include("mutator.php"); 
+        $name="";
+        $petName="";
+        $date="";
+        $service="";
+        $notes="";
+        handleGroomingFormSubmission();     
+    }
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,25 +31,6 @@
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #0056b3;
-        }
-        nav a {
-            color: white;
-            padding: 0.75rem 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #003d80;
         }
         main {
             padding: 2rem;
@@ -69,25 +71,16 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Pet Grooming Reservations</h1>
-    </header>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="hotel.html">Hotel Reservations</a>
-        <a href="grooming.html">Grooming Reservations</a>
-        <a href="catalog.html">Product Catalog</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    <?php include("header.php"); ?> 
     <main>
         <section class="form-section">
             <h2>Schedule a Grooming Appointment</h2>
-            <form action="process_grooming_reservation.php" method="POST">
+            <form method="POST">
                 <label for="owner-name">Your Name</label>
                 <input type="text" id="owner-name" name="owner_name" required>
 
                 <label for="pet-name">Pet's Name</label>
-                <input type="text" id="pet-name" name="pet_name" required>
+                <input type="text" id="name" name="name" required>
 
                 <label for="grooming-date">Preferred Grooming Date</label>
                 <input type="date" id="grooming-date" name="grooming_date" required>

@@ -71,16 +71,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Pet Products Catalog</h1>
-    </header>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="hotel.html">Hotel Reservations</a>
-        <a href="grooming.html">Grooming Reservations</a>
-        <a href="catalog.html">Product Catalog</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    <?php include("header.php");?>    
     <main>
         <h2>Explore Our Products</h2>
         <section class="product-grid">

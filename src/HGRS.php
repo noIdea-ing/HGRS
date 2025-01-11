@@ -42,17 +42,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to SI GEBUS Petshop Hotel & Grooming</h1>
-    </header>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="hotel.html">Hotel</a>
-        <a href="grooming.html">Grooming</a>
-        <a href="catalog.html">Product Catalog</a>
-        <a href="contact.html">Contact Us</a>
-
-    </nav>
+    <?php include("header.php"); ?>
     <p>CLICK HOME TO START EXPLORING SI GEBUS PETSHOP HOTEL AND GROOMING RESERVATIONS</p>
     <img src="/assets/title.jpg">
     <footer>

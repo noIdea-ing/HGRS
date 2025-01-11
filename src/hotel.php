@@ -69,16 +69,7 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Pet Hotel Reservations</h1>
-    </header>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="hotel.html">Hotel Reservations</a>
-        <a href="grooming.html">Grooming Reservations</a>
-        <a href="catalog.html">Product Catalog</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    <?php include("header.php"); ?>   
     <main>
         <section class="form-section">
             <h2>Book a Stay for Your Pet</h2>
