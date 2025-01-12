@@ -1,20 +1,19 @@
 <?php 
-    session_start();
-
-    // Check if the user is logged in
-    if (!isset($_SESSION['username'])) {
-            include("login.php");
-        exit();
-    }
-    else{
+    session_start(); // Start the session if not already started
+    $_SESSION['page'] = "Grooming Reservations";
+    date_default_timezone_set('Asia/Kuala_Lumpur');
+    if (isset($_SESSION['username'])) {
         echo "Favorite color is " . $_SESSION["username"] . ".<br>";
+        echo "Favorite animal is " . $_SESSION["userid"] . ".";
         include("mutator.php"); 
-        $name="";
+        include("accessor.php"); 
+        handleGroomingFormSubmission();
         $petName="";
         $date="";
         $service="";
         $notes="";
-        handleGroomingFormSubmission();     
+        $time="";
+
     }
  
 ?>
@@ -25,80 +24,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI GEBUS - Grooming Reservation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-        main {
-            padding: 2rem;
-        }
-        .form-section {
-            background-color: #ffffff;
-            padding: 2rem;
-            margin: 1rem auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-        }
-        .form-section input, .form-section select, .form-section button {
-            width: 100%;
-            margin: 0.5rem 0;
-            padding: 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-        .form-section button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .form-section button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <?php include("header.php"); ?> 
+    <?php if (isset($_SESSION['username'])): ?>
     <main>
         <section class="form-section">
             <h2>Schedule a Grooming Appointment</h2>
             <form method="POST">
-                <label for="owner-name">Your Name</label>
-                <input type="text" id="owner-name" name="owner_name" required>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" placeholder="<?php echo $_SESSION['username']?>" disabled><br>
 
-                <label for="pet-name">Pet's Name</label>
-                <input type="text" id="name" name="name" required>
+                <label for="pet-name">Pet's Name</label><br>
+                <input type="text" id="name" name="name" required><br>
 
-                <label for="grooming-date">Preferred Grooming Date</label>
-                <input type="date" id="grooming-date" name="grooming_date" required>
-
-                <label for="service">Grooming Service</label>
-                <select id="service" name="service" required>
-                    <option value="bath">Bath</option>
-                    <option value="haircut">Haircut</option>
-                    <option value="nail_trim">Nail Trim</option>
-                </select>
-
-                <label for="notes">Special Requests</label>
+                <label for="grooming-date">Preferred Grooming Date</label><br>
+                <input type="date" id="grooming-date" name="grooming_date" min="<?php echo date('Y-m-d'); ?>" required><br>
+                <label for="grooming-time">Preferred Grooming Time</label><br>
+                <input type="time" id="grooming-time" name="grooming-time" min="09:00" max="18:00" required><br>
+                <label>Select the Grooming Service</label><br>
+                <div class="checkbox">
+                    <input type="checkbox" id="service1" name="service[]" value="Bath">
+                    <label for="service1">Bath</label><br>      
+                    <input type="checkbox" id="service2" name="service[]" value="Haircut">
+                    <label for="service2">Haircut</label><br>
+                    <input type="checkbox" id="service3" name="service[]" value="Nail Trim">
+                    <label for="service3">Nail Trim</label><br>
+                </div>
+                <label for="notes">Special Requests</label><br>
                 <textarea id="notes" name="notes" rows="4"></textarea>
-
                 <button type="submit">Submit Reservation</button>
             </form>
+            <h2>Previous Appointment</h2>
+            <?php $result= getGroomingReservation();?>
+            <?php if (empty($result)): ?>
+                <p>No previous appointment found.</p>
+            <?php else:?>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Pet Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Services</th>
+                        <th>Notes</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($result as $row): ?>
+                        <tr>
+                            <td><?php echo $row['petname']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <td><?php echo $row['time']; ?></td>
+                            <td><?php echo $row['services']; ?></td>
+                            <td><?php echo $row['notes']; ?></td>
+                            <td>Accepted</td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php endif; ?>
         </section>
     </main>
+    <?php else: ?>
+        <main>
+            <div class="form-section">
+                <h2><strong>Please log in to schedule a grooming appointment.</strong></h2>
+                <form action="login.php">
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+        </main>
+    <?php endif; ?>
     <footer>
         &copy; 2025 SI GEBUS Petshop. All rights reserved.
     </footer>

@@ -1,93 +1,21 @@
+<?php 
+    session_start(); // Start the session if not already started
+    $_SESSION['page'] = "Contact Us";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI GEBUS - Contact Us</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #0056b3;
-        }
-        nav a {
-            color: white;
-            padding: 0.75rem 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #003d80;
-        }
-        main {
-            padding: 2rem;
-        }
-        .form-section {
-            background-color: #ffffff;
-            padding: 2rem;
-            margin: 1rem auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-        }
-        .form-section input, .form-section textarea, .form-section button {
-            width: 100%;
-            margin: 0.5rem 0;
-            padding: 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-        .form-section button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .form-section button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <?php include("header.php");?>
     <main>
-        <section class="form-section">
+        <section class="form-section-contactUs">
             <h2>We'd Love to Hear from You</h2>
-            <form action="process_contact.php" method="POST">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
         </section>
     </main>
     <footer>

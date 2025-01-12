@@ -1,61 +1,32 @@
 <?php
     include("database.php");
+    session_start(); 
+    $_SESSION['page'] = "SI GEBUS Pet Shop";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI GEBUS - Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #0056b3;
-        }
-        nav a {
-            color: white;
-            padding: 0.75rem 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #003d80;
-        }
-        main {
-            padding: 2rem;
-            text-align: center;
-        }
-        footer {
-            background-color: #343a40;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <?php include("header.php"); ?>
-    <main>
-        <h2>Your One-Stop Pet Care Solution</h2>
-        <p>At SI GEBUS, we provide high-quality services to keep your pets happy and healthy.</p>
-        <p>Choose from our luxurious hotel stays or professional grooming services today!</p>
-    </main>
+    <div class="section-home">
+        <div class="section-home-image">
+            <img src="/assets/title.jpg" alt="Pet Shop">
+        </div>
+        <div class="section-home-text">
+            <?php if (isset($_SESSION['username'])): ?>
+                <h2>Welcome back, <?php echo $_SESSION['username']; ?>!</h2>
+            <?php endif ?>
+            <h1>SI GEBUS: Your One-Stop Pet Care Solution</h1>
+            <p>At SI GEBUS, we provide high-quality services to keep your pets happy and healthy.</p>
+        </div>
+    </div>
+
+
     <footer>
         &copy; 2025 SI GEBUS Petshop. All rights reserved.
     </footer>
