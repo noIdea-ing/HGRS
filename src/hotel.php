@@ -3,10 +3,9 @@ session_start();
 $_SESSION['page'] = "Hotel Reservations";
 date_default_timezone_set('Asia/Kuala_Lumpur');
 if (isset($_SESSION['username'])) {
-    echo "Favorite color is " . $_SESSION["username"] . ".<br>";
-    echo "Favorite animal is " . $_SESSION["userid"] . ".";
     include("mutator.php"); 
     include("accessor.php"); 
+    updateReservationstatus(1);
     handleHotelFormSubmission();
     $petName="";
     $checkin="";
@@ -28,6 +27,7 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
     <?php include("header.php"); ?>   
+    <?php include("notification.php"); ?>
     <?php if (isset($_SESSION['username'])): ?>
     <main>
         <section class="form-section">
@@ -47,9 +47,9 @@ if (isset($_SESSION['username'])) {
 
                 <label for="room-type">Room Type</label><br>
                 <select id="room-type" name="room_type" required>
-                    <option value="standard">Standard</option>
-                    <option value="deluxe">Deluxe</option>
-                    <option value="suite">Suite</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Deluxe">Deluxe</option>
+                    <option value="Suite">Suite</option>
                 </select><br>
 
                 <label for="notes">Special Requests</label><br>
@@ -81,7 +81,7 @@ if (isset($_SESSION['username'])) {
                             <td><?php echo $row['checkoutTime']; ?></td>
                             <td><?php echo $row['roomtype']; ?></td>
                             <td><?php echo $row['notes']; ?></td>
-                            <td>Accepted</td>
+                            <td><?php echo $row['status']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

@@ -14,8 +14,10 @@
 <body>
     <?php include("header.php");?>
     <main>
-        <section class="form-section-contactUs">
+        <section class="form-section">
             <h2>We'd Love to Hear from You</h2>
+            <p><strong>Address:</strong> Unit 9G, One Cempaka, Jalan Laman Cempaka 1A, Kota Seriemas, 71800 Nilai, Negeri Sembilan</p>
+            <p><strong>Phone:</strong> 017-655 6010</p>
         </section>
     </main>
     <footer>

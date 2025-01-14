@@ -3,10 +3,9 @@
     $_SESSION['page'] = "Grooming Reservations";
     date_default_timezone_set('Asia/Kuala_Lumpur');
     if (isset($_SESSION['username'])) {
-        echo "Favorite color is " . $_SESSION["username"] . ".<br>";
-        echo "Favorite animal is " . $_SESSION["userid"] . ".";
         include("mutator.php"); 
         include("accessor.php"); 
+        updateReservationstatus(2);
         handleGroomingFormSubmission();
         $petName="";
         $date="";
@@ -28,6 +27,7 @@
 </head>
 <body>
     <?php include("header.php"); ?> 
+    <?php include("notification.php"); ?>
     <?php if (isset($_SESSION['username'])): ?>
     <main>
         <section class="form-section">
@@ -40,7 +40,7 @@
                 <input type="text" id="name" name="name" required><br>
 
                 <label for="grooming-date">Preferred Grooming Date</label><br>
-                <input type="date" id="grooming-date" name="grooming_date" min="<?php echo date('Y-m-d'); ?>" required><br>
+                <input type="date" id="grooming-date" name="grooming_date" min="<?=date('Y-m-d'); ?>" required><br>
                 <label for="grooming-time">Preferred Grooming Time</label><br>
                 <input type="time" id="grooming-time" name="grooming-time" min="09:00" max="18:00" required><br>
                 <label>Select the Grooming Service</label><br>
@@ -80,7 +80,7 @@
                             <td><?php echo $row['time']; ?></td>
                             <td><?php echo $row['services']; ?></td>
                             <td><?php echo $row['notes']; ?></td>
-                            <td>Accepted</td>
+                            <td><?php echo $row['status']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

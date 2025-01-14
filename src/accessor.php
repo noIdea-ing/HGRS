@@ -42,4 +42,33 @@
         }
 
     }
+
+    function getAllGroomingReservation() {
+        try{
+            global $conn;
+            $stmt = $conn->prepare("SELECT r.*, u.username FROM groomingreservation r JOIN user u ON r.userID = u.ID");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+        }
+
+    }
+
+    
+    function getAllHotelReservation() {
+        try{
+            global $conn;
+            $stmt = $conn->prepare("SELECT r.*, u.username FROM hotelreservation r JOIN user u ON r.userID = u.ID");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+        }
+
+    }
 ?>

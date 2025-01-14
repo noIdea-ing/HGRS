@@ -13,6 +13,7 @@
 </head>
 <body>
     <?php include("header.php"); ?>
+    <?php include("notification.php"); ?>
     <div class="section-home">
         <div class="section-home-image">
             <img src="/assets/title.jpg" alt="Pet Shop">

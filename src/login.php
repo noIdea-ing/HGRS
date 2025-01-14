@@ -11,13 +11,12 @@
         if ($result) {
             $_SESSION['username'] = $username;
             $_SESSION['userid'] = $result[0]['id'];
+            $_SESSION['role'] = $result[0]['role'];
             header('Location: index.php');
+            $_SESSION['notification'] = "Login successful!";
             exit();
         } else {
-            $error = "Invalid username or password!";
-            if(isset($error)){
-                echo "<p style='color: red;'>$error</p>";
-            }
+            $_SESSION['notification'] = "Invalid username or password!";
         }
     }
 ?>
@@ -27,10 +26,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>SI GEBUS - Login Page</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <?php include('header.php')?>
+<?php include 'notification.php';?>
 <body>
 
     <form method="POST" class="form-section">
@@ -44,6 +44,9 @@
             <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <button type="submit" class="btn">Submit</button>
+        <p>Don't have an account? <a href="register.php">Register here </a></p>
     </form>
+
+    
 </body>
 </html>

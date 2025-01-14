@@ -12,10 +12,7 @@
         echo"Could not connect!";
     }
 
-    if($conn){
-        echo"You are connected!";
-    }
-    else{
+    if(!$conn){
         echo"Could not connected!";
     }
 ?>

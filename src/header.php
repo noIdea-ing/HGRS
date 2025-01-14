@@ -12,15 +12,30 @@
     </header>
     <nav>
         <a href="index.php">Home</a>
-        <a href="hotel.php">Hotel Reservations</a>
-        <a href="grooming.php">Grooming Reservations</a>
+        <?php if (isset($_SESSION['username'])): ?>
+            <?php if ($_SESSION['role']=="admin"): ?>
+                <a href="ManageHotelReservation.php">Manage Hotel Reservation</a>
+            <?php else: ?>
+                <a href="hotel.php">Hotel Reservation</a>
+            <?php endif; ?>
+        <?php else: ?>
+            <a href="hotel.php">Hotel Reservation</a>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['username'])): ?>
+            <?php if ($_SESSION['role']=="admin"): ?>
+                <a href="ManageGroomingReservation.php">Manage Grooming Reservation</a>
+            <?php else: ?>
+                <a href="grooming.php">Grooming Reservation</a>
+            <?php endif; ?>
+        <?php else: ?>    
+            <a href="grooming.php">Grooming Reservation</a>
+        <?php endif; ?>
         <a href="catalog.php">Product Catalog</a>
         <a href="contact.php">Contact Us</a>
         <?php if (!isset($_SESSION['username'])): ?>
             <a href="login.php">Log In</a>
         <?php else: ?>
-  
-            <a href="logout.php">Log Out</a>
+            <a href="profile.php"><?php echo $_SESSION['username']?></a>
         <?php endif; ?>
     </nav>
 </body>   

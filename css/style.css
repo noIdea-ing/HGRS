@@ -1,4 +1,36 @@
-    
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="date"],input[type="datetime-local"], input[type="time"], select, textarea, button {
+    width: 100%; 
+    box-sizing: border-box; 
+    margin: 0.5rem 0; 
+    padding: 0.75rem; 
+    border: 1px solid #ced4da;
+    border-radius: 4px; 
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: auto; 
+}
+
+textarea {
+    resize: vertical; 
+}
+
+button {
+    cursor: pointer; 
+    width: 100%;
+    padding: 0.75rem; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,15 +48,13 @@ main {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 600px;
 }
-.form-section input, .form-section select, .form-section button, .form-section textarea {
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-}
 
-#owner-name,#name,#grooming-date,#notes,#grooming-time,#pet-name,#check-in,#check-out,#room-type,#username,#password {
-    width: 100%;
+.form-section-manage {
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
 }
 
 .checkbox {
@@ -34,16 +64,6 @@ main {
     border-radius: 4px;
 }
 
-.form-section button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.form-section button:hover {
-    background-color: #0056b3;
-}
 footer {
     background-color: #343a40;
     color: white;
@@ -60,20 +80,23 @@ header {
     padding: 1rem;
     text-align: center;
 }
+
 nav {
     display: flex;
     justify-content: center;
     background-color: #0056b3;
-
 }
+
 nav a {
     color: white;
     padding: 0.75rem 1rem;
     text-decoration: none;
 }
+
 nav a:hover {
     background-color: #003d80;
 }
+
 
 .main-home {
     padding: 0.5rem 2rem;  
@@ -85,6 +108,7 @@ nav a:hover {
     gap: 1.5rem;
     margin-top: 2rem;
 }
+
 .product-card {
     background-color: white;
     border: 1px solid #ddd;
@@ -93,25 +117,22 @@ nav a:hover {
     padding: 1rem;
     text-align: center;
 }
+
 .product-card img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
 }
+
 .product-card h3 {
     font-size: 1.2rem;
     margin: 0.5rem 0;
 }
+
 .product-card p {
     font-size: 1rem;
     color: #555;
-}
-
-
-
-.username {
-    color: #007bff;
 }
 
 .section-home {
@@ -123,7 +144,6 @@ nav a:hover {
     display : flex;
     height: 65%;
 }
-
 
 .section-home img {
     border-radius: 8px 0 0 8px;
@@ -144,13 +164,40 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
+
 table, th, td {
     border: 1px solid black;
 }
+
 th, td {
     padding: 10px;
     text-align: left;
 }
+
 th {
     background-color: #f2f2f2;
+}
+
+.notification-bar {
+    background-color: #f0f8ff; /* Light background color */
+    text-align: left; /* Center the text */
+    padding: 10px; /* Padding for spacing */
+    font-weight: normal; /* Bold text */
+    position: relative; /* Ensure it stays relative to the header */
+    z-index: 1; /* Make sure it's on top of other content */
+    border-bottom: 1px solid grey;
+}
+
+.btn-logout{
+    background-color: #f44336;
+}
+
+.btn-logout a{
+    color: white;
+    text-decoration: none;
+}
+
+.btn-logout:hover{
+    background-color: #d32f2f;
+
 }
