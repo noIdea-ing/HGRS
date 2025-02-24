@@ -62,7 +62,7 @@
                     }
                 ?>
             </table>
-            <h4>Accepted Grooming Reservations</h4>
+            <h4>Accepted Hotel Reservations</h4>
             <table>
                 <tr>
                     <th>ID</th>
@@ -93,7 +93,7 @@
                     }
                 ?>
             </table>
-            <h4>Declined Grooming Reservations</h4>
+            <h4>Declined Hotel Reservations</h4>
             <table>
                 <tr>
                     <th>ID</th>
@@ -124,7 +124,7 @@
                     }
                 ?>
             </table>
-            <h4>Expired Grooming Reservations</h4>
+            <h4>Expired Hotel Reservations</h4>
             <table>
                 <tr>
                     <th>ID</th>
