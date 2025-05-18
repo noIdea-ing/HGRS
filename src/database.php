@@ -1,19 +1,15 @@
 <?php
-$host = 'db.qmpellnictvsodhiufzq.supabase.co';
-$port = '5432';
+$host = 'aws-0-ap-southeast-1.pooler.supabase.com';
+$port = '6543';
 $dbname = 'postgres';
-$user = 'postgres';
+$user = 'postgres.qmpellnictvsodhiufzq';
 $password = 'vjE6Ak8DiEvlzpGc';
 
-// Force IPv4 resolution
-$ip = gethostbyname($host);  // resolves to IPv4
-$dsn = "pgsql:host=$ip;port=5432;dbname=postgres";
-
 try {
-    $dsn = "pgsql:host=$ip;port=$port;dbname=$dbname";
+    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "✅ Connected to Supabase PostgreSQL successfully!";
+    echo "✅ Connected to Supabase PostgreSQL (Transaction Pooler) successfully!";
 } catch (PDOException $e) {
     echo "❌ Connection failed: " . $e->getMessage();
 }
