@@ -1,5 +1,5 @@
 <?php
-    include("database.php");
+    include("src/database.php");
     session_start(); 
     $_SESSION['page'] = "SI GEBUS Pet Shop";
 ?>
@@ -9,11 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SI GEBUS - Home</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php include("header.php"); ?>
-    <?php include("notification.php");?>
+    <?php include("src/header.php"); ?>
+    <?php include("src/notification.php");?>
     
     <div class="section-home">
         <div class="section-home-image">

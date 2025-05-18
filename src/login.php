@@ -12,7 +12,7 @@
             $_SESSION['username'] = $username;
             $_SESSION['userid'] = $result['id'];
             $_SESSION['role'] = $result['role'];
-            header('Location: index.php');
+            header('Location: /index.php');
             $_SESSION['notification'] = "Login successful!";
             exit();
         } else {
