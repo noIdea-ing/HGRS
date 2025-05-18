@@ -10,8 +10,8 @@
         $result= login($username, $password);    
         if ($result) {
             $_SESSION['username'] = $username;
-            $_SESSION['userid'] = $result[0]['id'];
-            $_SESSION['role'] = $result[0]['role'];
+            $_SESSION['userid'] = $result['id'];
+            $_SESSION['role'] = $result['role'];
             header('Location: index.php');
             $_SESSION['notification'] = "Login successful!";
             exit();

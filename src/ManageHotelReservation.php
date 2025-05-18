@@ -44,8 +44,8 @@
                             echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
-                            echo "<td>".$reservation['checkinTime']."</td>";
-                            echo "<td>".$reservation['checkoutTime']."</td>";
+                            echo "<td>".$reservation['checkintime']."</td>";
+                            echo "<td>".$reservation['checkouttime']."</td>";
                             echo "<td>".$reservation['roomtype']."</td>";
                             echo "<td>".$reservation['notes']."</td>";
                             echo "<td>".$reservation['status']."</td>";
@@ -82,8 +82,8 @@
                             echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
-                            echo "<td>".$reservation['checkinTime']."</td>";
-                            echo "<td>".$reservation['checkoutTime']."</td>";
+                            echo "<td>".$reservation['checkintime']."</td>";
+                            echo "<td>".$reservation['checkouttime']."</td>";
                             echo "<td>".$reservation['roomtype']."</td>";
                             echo "<td>".$reservation['notes']."</td>";
                             echo "<td>".$reservation['status']."</td>";
@@ -113,8 +113,8 @@
                             echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
-                            echo "<td>".$reservation['checkinTime']."</td>";
-                            echo "<td>".$reservation['checkoutTime']."</td>";
+                            echo "<td>".$reservation['checkintime']."</td>";
+                            echo "<td>".$reservation['checkouttime']."</td>";
                             echo "<td>".$reservation['roomtype']."</td>";
                             echo "<td>".$reservation['notes']."</td>";
                             echo "<td>".$reservation['status']."</td>";
@@ -144,8 +144,8 @@
                             echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
-                            echo "<td>".$reservation['checkinTime']."</td>";
-                            echo "<td>".$reservation['checkoutTime']."</td>";
+                            echo "<td>".$reservation['checkintime']."</td>";
+                            echo "<td>".$reservation['checkouttime']."</td>";
                             echo "<td>".$reservation['roomtype']."</td>";
                             echo "<td>".$reservation['notes']."</td>";
                             echo "<td>".$reservation['status']."</td>";

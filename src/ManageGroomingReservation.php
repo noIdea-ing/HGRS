@@ -41,7 +41,7 @@
                     foreach ($groomingReservations as $reservation) {
                         if($reservation['status'] == "Unprocessed"){
                             echo "<tr>";
-                            echo "<td>".$reservation['Id']."</td>";
+                            echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
                             echo "<td>".$reservation['date']."</td>";
@@ -51,7 +51,7 @@
                             echo "<td>".$reservation['status']."</td>";
                             echo "<td>";
                             echo "<form method='post' action=''>";
-                            echo "<input type='hidden' name='reservation_id' value='".$reservation['Id']."'>";
+                            echo "<input type='hidden' name='reservation_id' value='".$reservation['id']."'>";
                             echo "<button type='submit' name='accept' class='btn-accept' value='Accept'>Accept</button>";
                             echo "<button type='submit' name='decline' class='btn-decline' value='Decline'>Decline</button>";
                             echo "</form>";
@@ -79,7 +79,7 @@
                     foreach ($groomingReservations as $reservation) {
                         if($reservation['status'] == "Accepted"){
                             echo "<tr>";
-                            echo "<td>".$reservation['Id']."</td>";
+                            echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
                             echo "<td>".$reservation['date']."</td>";
@@ -110,7 +110,7 @@
                     foreach ($groomingReservations as $reservation) {
                         if($reservation['status'] == "Declined"){
                             echo "<tr>";
-                            echo "<td>".$reservation['Id']."</td>";
+                            echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
                             echo "<td>".$reservation['date']."</td>";
@@ -141,7 +141,7 @@
                     foreach ($groomingReservations as $reservation) {
                         if($reservation['status'] == "Expired"){
                             echo "<tr>";
-                            echo "<td>".$reservation['Id']."</td>";
+                            echo "<td>".$reservation['id']."</td>";
                             echo "<td>".$reservation['username']."</td>";
                             echo "<td>".$reservation['petname']."</td>";
                             echo "<td>".$reservation['date']."</td>";

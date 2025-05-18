@@ -2,7 +2,7 @@
     session_start();
     include("mutator.php");
     $_SESSION['page'] = "Register New Account";
-    register();
+    register();  
 ?>
 <!DOCTYPE html>
 <html lang="en">

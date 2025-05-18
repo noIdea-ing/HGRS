@@ -77,8 +77,8 @@ if (isset($_SESSION['username'])) {
                     <?php foreach ($result as $row): ?>
                         <tr>
                             <td><?php echo $row['petname']; ?></td>
-                            <td><?php echo $row['checkinTime']; ?></td>
-                            <td><?php echo $row['checkoutTime']; ?></td>
+                            <td><?php echo $row['checkintime']; ?></td>
+                            <td><?php echo $row['checkouttime']; ?></td>
                             <td><?php echo $row['roomtype']; ?></td>
                             <td><?php echo $row['notes']; ?></td>
                             <td><?php echo $row['status']; ?></td>

@@ -1,18 +1,16 @@
 <?php
-    $db_server="localhost";
-    $db_user="root";
-    $db_pass="";
-    $db_name="hgrs";
-    $conn="";
+$host = 'db.qmpellnictvsodhiufzq.supabase.co';
+$port = '5432';
+$dbname = 'postgres';
+$user = 'postgres';
+$password = 'vjE6Ak8DiEvlzpGc';
 
-    try{
-        $conn=mysqli_connect($db_server,$db_user,$db_pass,$db_name);
-    }
-    catch(mysqli_sql_exception){
-        echo"Could not connect!";
-    }
-
-    if(!$conn){
-        echo"Could not connected!";
-    }
+try {
+    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "✅ Connected to Supabase PostgreSQL successfully!";
+} catch (PDOException $e) {
+    echo "❌ Connection failed: " . $e->getMessage();
+}
 ?>
