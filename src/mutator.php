@@ -46,7 +46,7 @@
                 exit;
 
             } catch (PDOException $e) {
-                echo "❌ Error: " . $e->getMessage();
+                error_log( $e->getMessage());
             }
         }
     }
@@ -141,7 +141,7 @@
 
                 $_SESSION['notification'] = "Reservation submitted successfully!";
             } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
+                error_log( $e->getMessage());
             }
         }
     }
@@ -174,7 +174,7 @@
                 $stmt->execute();
                 $_SESSION['notification'] = "Reservation submitted successfully!";
             } catch (PDOException $e) {
-                echo $e->getMessage();
+                error_log( $e->getMessage());
             }
         }
     }
@@ -182,7 +182,6 @@
 
     function handleReservationStatus($reservation) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo $reservation;
             if ($reservation == 1) {
                 $reservationId = $_POST['reservation_id'];
                 if (isset($_POST['accept'])) {
@@ -200,7 +199,7 @@
                         $stmt->execute();
                         $_SESSION['notification'] = "Updated successfully!";
                     } catch (PDOException $e) {
-                        echo "Error: " . $e->getMessage();
+                        error_log( $e->getMessage());
                     }
 
                     header("Location: " . $_SERVER['PHP_SELF']);
@@ -223,7 +222,7 @@
                         $stmt->execute();
                         $_SESSION['notification'] = "Updated successfully!";
                     } catch (PDOException $e) {
-                        echo "Error: " . $e->getMessage();
+                        error_log( $e->getMessage());
                     }
 
                     header("Location: " . $_SERVER['PHP_SELF']);
@@ -256,7 +255,7 @@
                 $stmt->execute();
             }
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            error_log( $e->getMessage());
         }
     }
     

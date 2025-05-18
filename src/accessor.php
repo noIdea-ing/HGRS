@@ -9,7 +9,7 @@
             return $result; 
         }
         catch (mysqli_sql_exception $e) {
-            echo $e->getMessage();
+            error_log( $e->getMessage());
         }
     }
 
@@ -23,7 +23,7 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (PDOException $e) {
-            echo $e->getMessage();
+            error_log( $e->getMessage());
             return [];
         }
     }
@@ -36,7 +36,7 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (PDOException $e) {
-            echo $e->getMessage();
+            error_log( $e->getMessage());
             return [];
         }
     }
@@ -49,7 +49,7 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (PDOException $e) {
-            echo $e->getMessage();
+            error_log( $e->getMessage());
             return [];
         }
     }
@@ -62,7 +62,7 @@
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (PDOException $e) {
-            echo $e->getMessage();
+            error_log( $e->getMessage());
             return [];
         }
     }
