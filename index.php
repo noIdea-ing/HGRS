@@ -1,6 +1,6 @@
 <?php
-    include("src/database.php");
     session_start(); 
+    include("src/database.php");
     $_SESSION['page'] = "SI GEBUS Pet Shop";
 ?>
 <!DOCTYPE html>

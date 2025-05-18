@@ -7,6 +7,7 @@ $password = 'vjE6Ak8DiEvlzpGc';
 
 // Force IPv4 resolution
 $ip = gethostbyname($host);  // resolves to IPv4
+$dsn = "pgsql:host=$ip;port=5432;dbname=postgres";
 
 try {
     $dsn = "pgsql:host=$ip;port=$port;dbname=$dbname";
