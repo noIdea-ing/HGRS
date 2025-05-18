@@ -5,8 +5,11 @@ $dbname = 'postgres';
 $user = 'postgres';
 $password = 'vjE6Ak8DiEvlzpGc';
 
+// Force IPv4 resolution
+$ip = gethostbyname($host);  // resolves to IPv4
+
 try {
-    $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
+    $dsn = "pgsql:host=$ip;port=$port;dbname=$dbname";
     $pdo = new PDO($dsn, $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "✅ Connected to Supabase PostgreSQL successfully!";
